@@ -8,8 +8,12 @@
     "lib": "lib"
   },
   "files": [
-    "queries"
+    "queries",
+    "copy_queries.js"
   ],
+  "bin": {
+    "copy-queries": "copy_queries.js"
+  },
   "scripts": {
     "semantic-release": "semantic-release",
     "generate": "vc-cli generate --distribute --collect && cp generated/collected.ttl ./collected.ttl && rm -rf generated",
