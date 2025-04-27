@@ -3,11 +3,13 @@ PREFIX vdl: <https://w3id.org/vdl#>
 PREFIX citizenship: <https://w3id.org/citizenship#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?s
+SELECT DISTINCT ?s ?givenName ?familyName
 WHERE {
   ?s citizenship:employmentAuthorizationDocument [ citizenship:lprCategory "C09" ] ;
     citizenship:residentSince ?date ;
     schema:birthDate ?birthDate ;
+    schema:givenName ?givenName ;
+    schema:familyName ?familyName ;
     vdl:license [ vdl:expiryDate ?expiryDate ] .
 
   # Has been a resident for at least 5 years

@@ -1,0 +1,12 @@
+PREFIX schema: <https://schema.org/>
+PREFIX citizenship: <https://w3id.org/citizenship#>
+PREFIX credentials: <https://www.w3.org/2018/credentials#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?person ?givenName ?familyName
+WHERE {
+  ?person a citizenship:EmployablePerson ;
+    schema:givenName ?givenName ;
+    schema:familyName ?familyName .
+}
+ORDER BY ?name 

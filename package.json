@@ -13,20 +13,22 @@
   "scripts": {
     "semantic-release": "semantic-release",
     "generate": "vc-cli generate --distribute --collect && cp generated/collected.ttl ./collected.ttl && rm -rf generated",
-    "query": "comunica-sparql-file ./collected.ttl -f ./queries/can-drive.rq",
-    "test": "npm run generate && npm run query"
+    "query:can-drive": "comunica-sparql-file ./collected.ttl -f ./queries/can-drive.rq",
+    "query:employment-status": "comunica-sparql-file ./collected.ttl -f ./queries/employment-status.rq",
+    "query:all": "npm run query:can-drive && npm run query:employment-status",
+    "test": "npm run generate && npm run query:all"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeswr/vc-queries"
+    "url": "https://github.com/jeswr/vc-queries.js"
   },
   "keywords": [],
   "author": "Jesse Wright <https://github.com/jeswr/>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeswr/vc-queries/issues"
+    "url": "https://github.com/jeswr/vc-queries.js/issues"
   },
-  "homepage": "https://github.com/jeswr/vc-queries/README.md",
+  "homepage": "https://github.com/jeswr/vc-queries.js/README.md",
   "devDependencies": {
     "@comunica/query-sparql-file": "^4.1.0",
     "@jeswr/vc-cli": "^1.10.1",
